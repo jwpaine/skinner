@@ -1,5 +1,5 @@
 const readline = require("readline");
-
+const fs = require('fs')
 
 let defaultConfig = {
 	"host" : "ec2-3-236-151-5.compute-1.amazonaws.com",
@@ -58,7 +58,11 @@ generateConfig.init = function(defaultConfig, callback) {
 			prompt = `Supply ${keys[i]}: `
 		}
 		_interface.question(prompt, (value) => {
-			config[keys[i]] = value
+			if (value == "") {
+				config[keys[i]] = defaultConfig[keys[i]] 
+			} else {
+				config[keys[i]] = value
+			}
 			i++;
       		if(i < keys.length){
         		generateConfig.getUserInput();
@@ -78,5 +82,21 @@ generateConfig.init = function(defaultConfig, callback) {
 if (process.argv[2] == 'init') {
 	generateConfig.init(defaultConfig, (config) => {
 		console.log(`--> ${JSON.stringify(config)}`)
+		console.log(`creating directory ${process.cwd() + '/' + config.shop}`)
+		let working_dir = process.cwd() + '/' + config.shop
+		fs.mkdir(working_dir, (error) => {
+			if (error) { 
+				throw error
+			}  
+			
+			console.log(`Local directory ${config.shop} created`)
+			console.log(`Writing config: ${working_dir + '/.config'}`)
+			fs.writeFile(working_dir + '/.config', JSON.stringify(config), (error) => {
+				if (error) {
+					throw(error)
+				}
+				console.log('Config written to disk')
+			}) 
+		})
 	})
 }	
