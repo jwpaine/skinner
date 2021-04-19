@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 const readline = require("readline");
 const fs = require('fs')
 const Rsync = require('rsync');
@@ -5,16 +7,16 @@ const chokidar = require('chokidar');
 const sass = require('node-sass');
 
 
+let privKey = ''
+let username = ''
 
 let defaultConfig = {
 	"host" : "ggc8admin3.avetti.ca",
+	"port" : 5511,
 	"base_dir" : "/avetti/httpd/htdocs/content/preview/store/",
 	"shop" : "20201202448",
-	"working_dir" : "/assets/themes/blaze_en/css"
+	"working_dir" : "/assets/themes/blaze_en/"
 }
-
-let privKey = ''
-let username = ''
 
 function Shop(working_dir, config) {
 	 this.working_dir = working_dir
@@ -44,19 +46,42 @@ Shop.prototype.init = function(callback) {
 	})
 }
 
-Shop.prototype.push = function() {
-	console.log(`Syncing local -> remote`)
+Shop.prototype.push = function(callback) {
+
+	let source = `${this.working_dir}/css`
+	let destination = `${username}@${this.config.host}:${this.config.base_dir + this.config.shop + this.config.working_dir}`
+
+	console.log(`pushing ${source} -> ${destination}`)
+
+
+	var rsync = new Rsync()
+	.shell(`ssh -i ${privKey} -p ${this.config.port}`)
+	.flags('chavzP')
+	.source(source)
+	.destination(destination);
+
+	// Execute the command
+	rsync.execute(function(error, code, cmd) {
+	// we're done
+		if (error && code != '23') {
+			callback(error)
+			return
+		}
+
+		callback(null)
+	});
 }
 
 Shop.prototype.pull = function(callback) {
 	
 
-	let source = `geiger_jpaine@${this.config.host}:${this.config.base_dir + this.config.shop + this.config.working_dir}`
+	let source = `${username}@${this.config.host}:${this.config.base_dir + this.config.shop + this.config.working_dir}css`
 
 	console.log(`pulling ${source} -> ${this.working_dir}`)
 
+
 	var rsync = new Rsync()
-	.shell('ssh -i ~/.ssh/geiger_jpaine_rsa -p 5511')
+	.shell(`ssh -i ${privKey} -p ${this.config.port}`)
 	.flags('chavzP')
 	.source(source)
 	.destination(this.working_dir);
@@ -65,7 +90,7 @@ Shop.prototype.pull = function(callback) {
 	rsync.execute(function(error, code, cmd) {
 	// we're done
 		if (error) {
-			ballback(err)
+			callback(error)
 			return
 		}
 
@@ -147,17 +172,21 @@ let compile = function(scss_file, css_file, callback) {
 	  });
 } 
 
-
+// initalize shop locally, and pull remote files
 if (process.argv[2] == 'init') {
 	new Shop(null, null).init((error, shop) => {
 		if (error) throw error
-
-		shop.pull()
+		shop.pull(function(err) {
+			if (err) {
+				console.log(err)
+				return
+			}
+			console.log('done!')
+		});
 		
 	})
 } else {
-
-	let working_dir = process.cwd() + '/20201202448'
+	let working_dir = process.cwd()
 	fs.readFile(`${working_dir}/.config`, (err, data) => {
 	    if (err) throw err;
 	    let config = JSON.parse(data)
@@ -169,7 +198,7 @@ if (process.argv[2] == 'init') {
 				return
 			}
 			console.log('done!')
-			//watch working directory /css/src for file changes
+			// watch working directory /css/src for file changes
 			s.watch(function(modifiedFile) {
 				console.log(`modified: ${modifiedFile}`)
 				// compile scss -> css
@@ -180,12 +209,18 @@ if (process.argv[2] == 'init') {
 						return
 					}
 					console.log('compiled!') 
+					// push changes to remote
+					s.push(function(err) {
+						if (err) {
+							console.log(err)
+							return
+						}
+						console.log('done!')
+					})
 					// sync local -> remote
 				})
 			}); 
-
 		})
-		
 	})
 }
 
