@@ -1,0 +1,37 @@
+/*
+ * Flex UX Framework
+ *
+ * Filename: custom_orders.scss
+ * Type:     Template Stylesheet
+ * 
+ * Copyright (C) 2019 Geiger, All Rights Reserved
+ */
+
+
+.custom-orders {
+
+	main {
+		background: #fff;
+	}
+
+    .page-header {
+        height: 0;
+    }
+
+	.page-body {
+
+    	max-width: 600px;
+    	margin: auto;
+        margin-top: auto;
+    	padding: 12px;
+        padding-bottom: 50px;
+    	margin-top: 9px;
+    	font-size: 14px;
+    	line-height: 21px;
+
+        @include mq('phone-wide', 'max'){
+            // padding: 15px;
+            margin-top: 0;
+        }
+	}
+}

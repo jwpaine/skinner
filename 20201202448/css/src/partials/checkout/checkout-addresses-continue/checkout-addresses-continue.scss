@@ -1,0 +1,23 @@
+/*
+ * Flex UX Framework
+ *
+ * Filename: checkout-addresses-continue.scss
+ * Type:     Partial Stylesheet
+ * 
+ * Copyright (C) 2019 Geiger, All Rights Reserved
+ */
+
+
+.checkout-container {
+	.btn-main{
+
+		@include mq("tablet", "min") {
+
+			&--continue-checkout {
+    			margin-left: 20px;
+    			margin-right: 20px;
+    			width: 250px;
+    		}
+    	}
+    }
+}

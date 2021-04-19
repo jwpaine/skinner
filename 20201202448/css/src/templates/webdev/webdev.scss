@@ -1,0 +1,39 @@
+/*
+ * Flex UX Framework
+ *
+ * Filename: webdev.scss
+ * Type:     Template Stylesheet
+ * 
+ * Copyright (C) 2019 Geiger, All Rights Reserved
+ */
+
+
+.webdev {
+	.page-body {
+
+		.page-header {
+			width: 100%;
+			height: 0px !important;
+		}
+
+		h1 {
+			text-align: center;
+		}
+
+		.mdl-grid {
+			.mdl-cell {
+				text-align: center;
+
+				.btn--primary {
+					min-width: 300px;
+				}
+			}
+			.right-cell {
+				text-align: right;
+			}
+			.left-cell {
+				text-align: left;
+			}
+		}
+	}
+}

@@ -1,0 +1,75 @@
+/*
+ * Flex UX Framework
+ *
+ * Filename: home-featured-v1.scss
+ * Type:     Partial Stylesheet
+ *
+ * Copyright (C) 2019 Geiger, All Rights Reserved
+ */
+
+// @TODO: rename markup
+// @TODO: convert @media queries to use the mq mixin
+
+
+#featured-1 {
+  width: 100%; 
+  // display: flex;
+  // flex-flow: column;
+  // justify-content: center;
+  min-height: 398px;
+  height: auto;
+  display: block;
+
+  &__content {
+    padding-top: 40px;
+    width: 100%;
+    max-width: 1250px;
+    margin: auto;
+    display: block;
+    
+    @include mq("phone-wide", "max"){
+      width: auto;
+      padding-left: 5px;
+      padding-right: 5px;
+    }
+
+    .product-card {
+      margin-bottom: 0;
+      margin-top: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      line-height: 1; 
+
+    }
+  }
+}
+
+.main-feature {
+   @media only screen and (max-width: 767px) and (min-width: 400px) {
+    height: 275px !important;
+    min-height: 275px !important;
+    max-height: 275px !important;
+  }
+
+  @include mq("tablet-small", "max") {
+    height: auto;
+    padding: 10px 38px 38px;
+    flex-flow: column nowrap;
+  }
+
+  @include mq("phone-wide", "max") {
+    margin: 6px;
+  }
+
+  height: 300px;
+  margin: 12px;
+  display: flex;
+  flex-flow: row nowrap;
+  padding: 0;
+  border-radius: 5px;
+  overflow: hidden;
+
+
+}

@@ -1,0 +1,97 @@
+/*
+ * Flex UX Framework
+ *
+ * Filename: checkout-review-shipping.scss
+ * Type:     Partial Stylesheet
+ * 
+ * Copyright (C) 2019 Geiger, All Rights Reserved
+ */
+
+.checkout-review .checkout-container {
+    .shipping-row {
+        display: block !important;
+
+        .shipping-address-info {
+            width: 100%;
+        }
+
+        .shipping-row__content {
+            width: calc(100% - 42px);
+            min-height: 62px;
+            font-size: 14px;
+            line-height: 16px;
+            letter-spacing: 0;
+
+            @include mq('phone','max'){
+                padding-top: 5px;
+            }
+
+            span {
+                display: inline-block;
+                width: 100%;
+            }
+
+            .address-line--title{
+                font-weight: 700;
+            }
+        }
+    }
+
+    .shipping-row.shipping-row--method {
+        border-bottom: 1px solid #efeff1;
+    }
+}
+
+.checkout-container{
+
+    .shipping-address-info {
+        display: flex;
+    }
+
+    .shipping-method-info {
+        display: flex;
+        flex: 1 1 100%;
+
+        p {
+            margin-bottom: 0;
+            align-self: center;
+            font-weight: bold;
+            line-height: 16px;
+        }
+
+        span{
+            display: block;
+            font-weight: normal;
+            line-height: 16px;
+        }
+    }
+}
+
+.checkout-review .checkout-container .items {
+    border-bottom: 1px solid #efeff1;
+    flex-basis: 100%;
+
+    .mdl-list {
+        padding-top: 0;
+    }
+
+    .mdl-list__item {
+        font-family: $standard-font-face;
+        display: flex;
+        flex-wrap: wrap;
+        font-size: 13px;
+        line-height: 15px;
+        letter-spacing: 0;
+        span {
+            flex: 1 1 100%;
+            .price {
+                text-align: right;
+                float: right;
+                font-weight: normal;
+            }
+        }
+        .title{
+            font-weight: 700;
+        }
+    }
+}

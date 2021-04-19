@@ -1,0 +1,47 @@
+/*
+ * Flex UX Framework
+ *
+ * Filename: checkout-split-inputs.scss
+ * Type:     Partial Stylesheet
+ * 
+ * Copyright (C) 2019 Geiger, All Rights Reserved
+ */
+
+.checkout-split-row {
+
+	.product-quantity {
+	    min-width: 60px;
+	    width: 60px;
+	    align-self: center;
+	}
+
+	.checkout-split-cell {
+		.partial-quantity-container {
+		    flex: 1 1;
+		    display: flex;
+		    flex-flow: column;
+		    flex-wrap: wrap;
+		    justify-content: center;
+		    
+		    span {
+    			text-align: center;
+			}
+		}
+	}
+
+}
+
+.checkout-split-row--single-split {
+
+	.checkout-split-cell{
+		&--name {
+		    flex: 2 2;
+		    justify-content: center;
+		    text-align: center;
+		}
+		&--quantity{
+			flex:3 3;
+		}
+	}
+}
+

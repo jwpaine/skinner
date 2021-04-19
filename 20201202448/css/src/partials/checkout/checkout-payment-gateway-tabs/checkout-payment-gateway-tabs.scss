@@ -1,0 +1,20 @@
+/*
+ * Flex UX Framework
+ *
+ * Filename: checkout-payment-gateway-tabs.scss
+ * Type:     Partial Stylesheet
+ * 
+ * Copyright (C) 2019 Geiger, All Rights Reserved
+ */
+
+.checkout-container .checkout-bottom--gateways .gateway-tabs .gateway-tabs__tab-bar {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    font-size: 14px;
+    height: unset;
+    min-height: 48px;
+    .mdl-tabs__tab {
+    font-size: 16px;
+    font-weight: 700;
+	}
+}

@@ -1,0 +1,136 @@
+/*
+ * Flex UX Framework
+ *
+ * Filename: checkout-payment-cc.scss
+ * Type:     Partial Stylesheet
+ * 
+ * Copyright (C) 2019 Geiger, All Rights Reserved
+ */
+
+.checkout-container .checkout-bottom--gateways .gateway-tabs .payment-columns {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.checkout-container .checkout-bottom--gateways .payment-column-one, 
+.checkout-container .checkout-bottom--gateways .payment-column-two {
+    box-sizing: border-box;
+    max-width: 100%
+}
+
+.checkout-container .checkout-bottom--gateways .payment-column-one {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex: 55 55 55%;
+    border-right: 1px solid #efeff1;
+}
+
+.checkout-container h3 {
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 18px;
+    margin: 0;
+    flex: 1 1 100%;
+}
+.checkout-container .checkout-bottom--gateways .gateway-tabs .billing-adjust {
+    flex: 2 2 100%;
+    text-align: center;
+    cursor: pointer;
+    font-size: 13px;
+    line-height: 18px;
+}
+
+.checkout-container .checkout-bottom--gateways .payment-column-two {
+    flex: 45 45 45%;
+}
+
+.checkout-container .checkout-bottom--gateways .payment-column-two .payment-column-two__line {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+
+    .payment-column-two__line--icon {
+        position: relative;
+        line-height: 61px;
+        left: -4px;
+
+        @include mq('desktop', 'max') {
+            display: none;
+        }
+    }
+}
+.checkout-container .checkout-bottom--gateways .payment-column-two--plp .textfield-cc {
+    flex: 1 1 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+    max-width: 90%;
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+
+.checkout-container .checkout-bottom--gateways .payment-column-two .payment-column-two-bottom {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    flex-flow: column;
+}
+.checkout-container .checkout-bottom--gateways .payment-column-two--plp .checkbox-cc {
+    margin-bottom: 20px;
+    margin-left: 20px;
+    .mdl-checkbox__label{
+        font-size: 14px;
+        font-weight: 700;
+    }
+}
+.checkout-container .checkout-bottom--gateways .payment-column-two .payment-column-two-top, 
+.checkout-container .checkout-bottom--gateways .payment-column-two .payment-column-two-bottom {
+    // height: 50%;
+}
+
+// Credit card field area
+.checkout-container .plp-wrapper {
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+}
+.checkout-container .plp-wrapper iframe#plp-iframe {
+    height: 320px;
+    width: 370px;
+    border: 0;
+    padding: 0;
+    margin: 0;
+    background-color: #FFFFFF;
+}
+
+@include mq("tablet", "max") {
+    .checkout-container .checkout-bottom--gateways .payment-column-one h3, 
+    .checkout-container .checkout-bottom--gateways .payment-column-two h3 {
+        text-align: left;
+        padding-left: 5%;
+        padding-top: 20px;
+        padding-bottom: 10px;
+    }
+    .checkout-container .checkout-bottom--gateways .payment-column-one, 
+    .checkout-container .checkout-bottom--gateways .payment-column-two {
+        flex: 1 1 100%;
+    }
+}
+
+
+@include mq("tablet", "min") {
+	.checkout-container .checkout-bottom--gateways .payment-column-one, 
+	.checkout-container .checkout-bottom--gateways .payment-column-two {
+	    padding-left: 20px;
+	    padding-right: 20px;
+	    margin-top: 20px;
+	    margin-bottom: 20px;
+	}
+	.checkout-container .checkout-bottom--gateways .payment-column-one {
+	    max-width: 50% !important;
+	}
+	.checkout-container .checkout-bottom--gateways .gateway-tabs .textfield-payment {
+    	flex: 1 1 50%;
+	}
+}

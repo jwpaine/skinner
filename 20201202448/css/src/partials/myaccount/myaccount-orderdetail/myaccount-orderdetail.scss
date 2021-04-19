@@ -1,0 +1,23 @@
+/*
+ * Flex UX Framework
+ *
+ * Filename: myaccount-orderdetail.scss
+ * Type:     Partial Stylesheet
+ * 
+ * Copyright (C) 2019 Geiger, All Rights Reserved
+ */
+
+.my-account{
+	table{
+		width: 100%;
+	}
+
+	.price{
+		font-weight: normal;
+	}
+
+	table:last-of-type > tbody:first-child{
+		height:20px;
+		text-align: left;
+	}
+}

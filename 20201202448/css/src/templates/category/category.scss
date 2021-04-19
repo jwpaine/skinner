@@ -1,0 +1,132 @@
+/*
+ * Flex UX Framework
+ *
+ * Filename: category.scss
+ * Type:     Template Stylesheet
+ * 
+ * Copyright (C) 2019 Geiger, All Rights Reserved
+ */
+
+
+.category {
+
+	
+	
+}
+
+.category-list {
+	main{
+		background-color: #f2f2f2; 
+
+		.max-order {
+			display: flex; 
+			justify-content: center;
+			align-items: center;
+			height: 42px;
+			text-align: center;
+			padding: 10px; 
+
+			margin: 0px;
+				
+
+			background: white;
+			padding: 8px; 
+			line-height: 1.25em; 
+
+			p {
+				font-size: calc(12px + 0.25vw);
+                font-weight: 700;
+			    color: #E60000; 
+			    margin: 0; 
+			    line-height: 1.25em; 
+			}
+			 
+			
+		}   
+	}
+
+	.page-header {
+		height: 0px!important;
+	}
+
+	.page-body {
+		font-family: $standard-font-face;
+		font-size: 13px;
+		display: flex;
+		flex-wrap: wrap;
+
+		.products-container {
+			flex-grow: 1;
+			flex-basis: calc(100% - 260px);
+			// border-bottom: 1px solid rgba(226,226,226,0.5);
+			order: 4;
+			margin-right: -12px;
+			overflow-x: hidden;
+
+			@include mq('tablet', 'max') {
+				margin-right: 0;
+				flex-basis: 100%;
+    			margin: 24px -12px 0;
+			}
+
+			@include mq("phone-wide", "max") {	
+				margin: 6px -6px 0;
+				padding: 18px;
+				padding-top: 0;
+			}
+		}
+
+		.grid-container {
+    		display: flex;
+    		flex-flow: row nowrap;
+		}
+
+		@include mq('tablet', 'max') {
+			flex-direction: row-reverse;
+		}
+		@include mq("phone-wide", "max") {
+		    padding: 15px;
+		    margin-top: 0;
+		}
+	}
+
+	.products-header {
+    	flex: 3 75%;
+    	order: 1;
+    	height: 41px;
+    	padding-bottom: 5px;
+    	margin-bottom: 15px;
+    	
+    	@include mq('tablet', 'max') {
+			align-self: center;
+			order: -1;
+	    	flex: 2 2 50%;
+	    	display: flex;
+	    	justify-content: flex-end;
+	    	margin-bottom: 0;
+		}	
+
+    	@include mq('tablet', 'min') {
+    		display: flex;
+			flex-flow: row;
+    		flex-wrap: nowrap;
+			flex-wrap: nowrap;
+			flex: 4 4 100%;
+    	}
+
+    	.title {
+    		flex: 1 1 50%;
+			font-size: 30px;
+			height: 62px;
+			font-weight: 400; 
+			font-family: $secondary-font-face;
+
+			@include mq('tablet', 'min') {
+				line-height: 62px;
+    			// margin-left: 240px;
+			}
+    	}
+
+	}
+
+}

@@ -1,0 +1,208 @@
+/*
+ * Flex UX Framework
+ *
+ * Filename: product_card.scss
+ * Type:     Component Stylesheet
+ *
+ * Copyright (C) 2019 Geiger, All Rights Reserved
+ */
+
+ // @TODO: factor media queries, convert to mixin, push margin attributes to parent
+ .page-body .mdl-tabs .products-tab-panels .grid-cell {
+    max-height: 304px;
+    width: 300px;
+    max-width: 300px;
+    flex-basis: 300px;
+}
+
+.page-body .grid .grid-cell.product-cell, 
+.page-body .grid .grid-cell.new-cell {
+	width: 220px;
+    max-width: 300px;
+    flex-basis: 220px;
+    border-top: none;
+	@include mq("tablet", "max"){
+	    width: calc(50% - 24px);
+	    flex-basis: calc(50% - 24px);
+	}
+}
+
+.page-body .grid .grid-cell.product-cell:nth-child(n+3), 
+.page-body .grid .grid-cell.new-cell:nth-child(n+3) {
+	@include mq('phone-wide', 'max'){
+	    display: none;
+	}
+}
+
+.product-card, .product-cell {
+	@include mq('tablet', 'max') {
+	    width: calc(50% - 24px);
+	    flex-basis: calc(50% - 24px);
+	}
+
+	@include mq('phone-wide', 'max') {
+		// height: 250px;
+		font-size: 12px;
+		// padding: 20px 10px;
+	}
+
+	@include mq('phone', 'max') {
+    	font-size: 13px;
+	}
+
+
+    border-top: none;
+	position: relative;
+    background: white;
+    box-sizing: border-box;
+    border-radius: 5px;
+    overflow: hidden;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    flex-basis: 230px;
+    flex: 1 0 230px;
+    width: 230px;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 11px;
+    max-width: 215px;
+	padding: 20px 10px;
+
+    &--spotlight {
+    	max-width: 200px;
+	    // flex-basis: 200px;
+	    padding: 30px;
+	    height: 270px;
+
+    	@include mq('phone-wide', 'max') {
+			padding: 20px 10px 0 10px;
+			// flex-basis: 0;
+		}
+	
+		&:nth-child(n+5) {
+			@include mq('phone-wide', 'max') {
+				display: none;
+			}
+		}
+    }
+
+    a {
+    	text-decoration: none;
+    	cursor: pointer;
+	}
+
+	.product-card-image {
+		padding-bottom: 0;
+		max-height: 184px;
+		margin: auto;
+	    max-width: 100%;
+	    display: flex;
+	    align-items: center;
+	    justify-content: center;
+
+	    &__image {
+
+	    	@include mq('phone-wide', 'min') {
+				max-height: 100%;
+			}
+
+			max-width: 125px !important;
+    		max-height: 125px !important;
+			display: block;
+			width: auto;
+			height: auto;
+			// padding-left: 20px;
+			// padding-right: 20px;
+			padding-bottom: 20px;
+		}
+	}
+ 
+	.name {
+		font-size: 14px;
+		font-family: $standard-font-face;
+		color: $primary-font-color; 
+    	line-height: 1.15;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		display: -webkit-box;
+		-webkit-box-orient: vertical;
+		-webkit-line-clamp: 3;
+		letter-spacing: normal;
+		margin-bottom: 10px;
+		height: 50px; 
+	    font-weight: 700; 
+	}
+	.price {
+		// margin-top: 7px;
+		margin-top: 0px;
+    	font-size: 14px;
+		color: $secondary-font-color; 
+		font-family: $standard-font-face;
+    	font-weight: 700; 
+	}
+
+}//.product-card, .product-cell 
+
+.product-cell {
+    max-height: 304px;
+    max-width: 300px;
+    border-top: none;
+
+    @include mq('phone-wide', 'min') {
+    	padding: 30px;
+	}
+
+	@include mq('tablet', 'max') {
+    	width: calc(50% - 24px) !important;
+    	flex-basis: calc(50% - 24px) !important;
+	}
+
+	.img-container {
+	    margin: auto;
+	    max-width: 100%;
+	    display: flex;
+	    align-items: center;
+	    justify-content: center;
+	    max-height: 184px;
+	}
+}
+// 	// -----
+// 	position: relative;
+//     margin: 0 12px 24px;
+//     background: white;
+//     box-sizing: border-box;
+//     border-radius: 5px;
+//     overflow: hidden;
+//     display: flex;
+//     flex-flow: column nowrap;
+//     justify-content: space-between;
+//     flex-basis: 230px;
+//     flex: 1 0 230px;
+//     width: 230px;
+//     text-transform: uppercase;
+//     text-align: center;
+//     font-size: 11px;
+//     width: 295px;
+//     max-width: 295px;
+//     flex-basis: 295px;
+//     border-top: none;
+//     padding: 10px 20px 20px 20px;
+//
+//
+//     a {
+//     	text-decoration: none;
+//     	text-align: center;
+//     	font-size: 11px;
+//     }
+//
+//
+// 	.price {
+// 		margin-top: 7px;
+//     	font-size: 16px;
+//     	color: $brand-color;
+//     	font-weight: 700;
+// 	}
+//
+//
+// }

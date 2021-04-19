@@ -1,0 +1,18 @@
+/*
+ * Flex UX Framework
+ *
+ * Filename: checkout-payment-column-billing.scss
+ * Type:     Partial Stylesheet
+ * 
+ * Copyright (C) 2019 Geiger, All Rights Reserved
+ */
+@include mq("tablet", "max"){
+	.checkout-container .checkout-bottom--gateways .gateway-tabs .textfield-payment {
+	    flex: 1 1 100%;
+	    margin-bottom: 0;
+	}
+	.checkout-container .checkout-bottom--gateways .gateway-tabs .textfield-payment, .checkout-container .checkout-bottom--gateways .gateway-tabs .billing-adjust {
+	    max-width: 90%;
+	    margin-top: 10px;
+	}
+}

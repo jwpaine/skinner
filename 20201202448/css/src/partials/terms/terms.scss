@@ -1,0 +1,54 @@
+/*
+ * Flex UX Framework
+ *
+ * Filename: terms.scss
+ * Type:     Partial Stylesheet
+ * 
+ * Copyright (C) 2019 Geiger, All Rights Reserved
+ */
+
+
+.terms {
+	main {
+		background: #fff;
+	}
+
+	.page-body {
+		max-width: 600px;
+		margin: auto;
+    	margin-top: auto;
+		padding: 12px;
+		padding-bottom: 50px;
+		margin-top: 9px;
+
+		> * {
+			color: $primary-font-color;    
+		}
+	 
+
+		@include mq("phone-wide", "max"){
+			padding: 15px;
+    		margin-top: 0;
+		}
+	} 
+
+	h1 {
+		color: $primary-font-color !important; 
+	}
+
+	h1:not(:first-of-type) {
+		font-size: 21px;
+		line-height: 1.15;
+		font-family: $standard-font-face;
+		letter-spacing: 0;
+		font-weight: 700;
+		text-transform: none;
+		margin-bottom: 5px;
+    }
+
+    p {
+    	font-size: 14px;
+    	line-height: 1.5em;
+    	margin-bottom: 20px;
+	}
+}

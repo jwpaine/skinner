@@ -1,0 +1,31 @@
+/*
+ * Flex UX Framework
+ *
+ * Filename: contact_us.scss
+ * Type:     Template Stylesheet
+ * 
+ * Copyright (C) 2019 Geiger, All Rights Reserved
+ */
+
+
+.contact-us {
+
+	main {
+		background: #fff;
+	}
+
+    .page-header {
+        height: 0;
+    }
+
+	.page-body {
+    	max-width: 616px; 
+    	margin: auto;
+    	margin-top: auto;
+    	padding: 12px;
+        padding-bottom: 50px;
+    	margin-top: 9px;
+   		font-size: 14px;
+    	line-height: 21px;
+	}
+}

@@ -1,0 +1,29 @@
+/*
+ * Flex UX Framework
+ *
+ * Filename: item-suggested-products.scss
+ * Type:     Partial Stylesheet
+ * 
+ * Copyright (C) 2019 Geiger, All Rights Reserved
+ */
+
+.suggested-products {
+	.suggested-products-header-container {
+	    font-size: 23px;
+	    font-weight: 700; 
+	    font-family: $secondary-font-face;
+	    text-align: center;
+	    padding: 30px 0 20px 0;
+	    text-transform: capitalize; 
+	    color: $primary-font-color; 
+
+	    @include mq("tablet", "max") {
+	    	text-align: center;
+    		padding: 20px 0 14px;
+	    }
+	}
+
+	.grid {
+	    justify-content: center !important;
+	}
+}

@@ -1,0 +1,33 @@
+/*
+ * Flex UX Framework
+ *
+ * Filename: faqs.scss
+ * Type:     Template Stylesheet
+ * 
+ * Copyright (C) 2019 Geiger, All Rights Reserved
+ */
+
+
+.faqs {
+
+	main {
+		background: #fff;
+	}
+
+    .page-header {
+        height: 0;
+    }
+
+
+
+	.page-body {
+
+    	max-width: 600px;
+        padding-bottom: 50px;
+
+        @include mq('phone-wide', 'max') {
+            padding: 15px;
+            margin-top: 0;
+        }
+	}
+}

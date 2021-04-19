@@ -1,0 +1,105 @@
+/*
+ * Flex UX Framework
+ *
+ * Filename: wishlist-content.scss
+ * Type:     Partial Stylesheet
+ * 
+ * Copyright (C) 2019 Geiger, All Rights Reserved
+ */
+
+
+.wishlist{
+	 main {
+	    // background: #f2f2f2;
+	}
+
+	a{
+		font-size: 14px;
+		// color:$brand-color;
+	}
+
+	form{
+		.f-field{
+			textarea,input{
+				@include mq("phone-wide", "max"){
+					width: 100%;
+				}
+			}
+		}
+		.f-row, .f-buttons{
+			margin-bottom: 10px;
+		}
+		.f-buttons{
+			display: flex;
+			input{
+				padding: 2px 5px;
+				width:100px;
+				border: none;
+				@include mq("phone-wide", "max"){
+					width: 50%;
+				}
+			}
+		}
+	}
+
+	.page-body{
+		p:first-of-type{
+			line-height: 18px;
+		}
+	}
+
+	.btn-continue-shopping{
+		margin-top: 20px;
+	}
+
+	.wishlist-grid {
+		padding-top: 24px;
+		
+		@include mq("phone-wide", "max"){
+		    padding: 15px;
+		}
+
+		textarea {
+		    width: 100%;
+		    min-height: 64px;
+		    min-width: 200px;
+		    margin-bottom: 10px;
+		}
+
+
+		.wishlist-product-cell {
+			margin-bottom: 50px;
+
+			@include mq('tablet','max'){
+				margin-bottom: 10px;
+			}
+			.product-card{
+				@include mq("phone-wide", "max"){
+				    width: calc(100% - 28px);
+				}
+			}
+
+			.mdl-checkbox {
+			    float: left;
+			    width: 0px;
+			}
+		}
+
+		.wishlist-controls-cell{
+
+			input{
+				margin-top: 10px;
+				text-align: center;
+			}
+		}
+	}
+
+	.mdl-cell {
+		font-size: 14px;
+		margin-left: 0px;
+		@include mq('tablet','max'){
+			margin-bottom: 50px;
+		}
+	}	
+}
+

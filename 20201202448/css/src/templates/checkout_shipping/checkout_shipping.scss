@@ -1,0 +1,59 @@
+/*
+ * Flex UX Framework
+ *
+ * Filename: checkout_shipping.scss
+ * Type:     Template Stylesheet
+ * 
+ * Copyright (C) 2019 Geiger, All Rights Reserved
+ */
+.checkout-container{
+	.checkout-main{
+	    display: flex;
+	    flex-flow: column;
+
+		@include mq("tablet", "max") {
+		    flex: 1 1 100%;
+		}
+		
+		&.checkout-main--split {
+	    	margin-right: 0;
+		}
+
+		.checkout-main-bottom {
+			@include mq("tablet", "max") {
+			    margin-bottom: 20px;
+			}
+		}
+	}
+
+	h2 {
+		@include mq("tablet", "min"){
+		    padding: 20px;
+		    padding-bottom: 0;
+		}
+	}
+}
+
+.select-option-btn {
+    background: #f3f3f3; 
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+    font-size: 13px;
+    margin: 10px 0;
+    font-family: $standard-font-face;
+    font-weight: 700;
+}
+
+.material-icons {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+main {
+    flex: 1 0 auto;
+}

@@ -1,0 +1,40 @@
+/*
+ * Flex UX Framework
+ *
+ * Filename: checkout-addresses-billing.scss
+ * Type:     Partial Stylesheet
+ * 
+ * Copyright (C) 2019 Geiger, All Rights Reserved
+ */
+
+
+
+.checkout-main-bottom {
+	.mdl-list {
+    	padding-top: 8px;
+
+    	&__item:first-of-type {
+    		padding-top: 0px;
+		}
+
+		.checkout-address-list {
+    		margin-top: 0;
+
+    		&__sole-description {
+    			font-size: 14px;
+    			line-height: 16px;
+    			letter-spacing: 0;
+   				color: $primary-font-color;
+   				margin-left: 22px;
+			}
+		}
+	}
+
+    input {
+        -webkit-appearance: none;
+        font-family: $standard-font-face;
+        color: #000;
+        line-height: 1;
+        font-size: 13px;
+    }
+}

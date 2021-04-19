@@ -1,0 +1,14 @@
+/*
+ * Flex UX Framework
+ *
+ * Filename: checkout-errors.scss
+ * Type:     Partial Stylesheet
+ * 
+ * Copyright (C) 2019 Geiger, All Rights Reserved
+ */
+
+.checkout-container {
+	@include mq("tablet", "max"){
+		    margin: 10px;
+	}
+}

@@ -1,0 +1,43 @@
+/*
+ * Flex UX Framework
+ *
+ * Filename: checkout-payment-questions.scss
+ * Type:     Partial Stylesheet
+ * 
+ * Copyright (C) 2019 Geiger, All Rights Reserved
+ */
+
+
+.checkout-container .checkout-middle {
+    display: flex;
+    flex: 1 1 100%;
+    margin-bottom: 20px;
+}
+.checkout-container .checkout-middle--script-questions {
+    flex-wrap: wrap;
+    padding-bottom: 10px;
+}
+.checkout-container .checkout-middle--script-questions h2, 
+.checkout-container .checkout-middle--script-questions h3 {
+    flex: 1 1 100%;
+}
+
+.checkout-container .checkout-middle--script-questions .mdl-textfield {
+    flex: 1 1 100%;
+    align-self: center;
+    max-width: 300px;
+    margin: auto;
+    box-sizing: border-box;
+}
+@include mq("tablet", "max"){
+    .checkout-container .checkout-middle--script-questions .mdl-textfield {
+        max-width: 90%;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
+@include mq("tablet", "min"){
+	.checkout-container .checkout-middle--script-questions h2, .checkout-container .checkout-middle--script-questions h3 {
+	    padding: 20px;
+	}
+}

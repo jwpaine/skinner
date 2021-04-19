@@ -1,0 +1,78 @@
+/*
+ * Flex UX Framework
+ *
+ * Filename: checkout-payment-subtotals.scss
+ * Type:     Partial Stylesheet
+ * 
+ * Copyright (C) 2019 Geiger, All Rights Reserved
+ */
+
+ .checkout-container .checkout-side .checkout-side-top--subtotal .price, 
+ .checkout-container .checkout-side .checkout-side-top--subtotal .subtotal-label {
+    display: inline;
+    flex: 1 1 50%;
+    box-sizing: border-box;
+}
+
+.checkout-container .checkout-side .checkout-side-top--subtotal {
+    margin-bottom: 20px;
+    display: flex !important;
+	flex-flow: row !important;
+	flex-wrap: wrap !important;
+
+    @include mq("tablet", "min"){
+    	padding-top: 20px !important;
+	    padding-bottom: 20px !important;
+    }
+
+    .subtotal-row {
+	    display: flex;
+	    padding: 0;
+	    margin: 0;
+	    flex: 1 1 100%;
+	}
+	.subtotal-label {
+    	text-align: left;
+    	font-size: 16px;
+	}
+	.price {
+	    text-align: right;
+	    font-size: 18px;
+	    font-weight: bold;
+	}
+}
+.checkout-container .checkout-side .checkout-side-top--subtotal .subtotal-separator {
+    flex: 1 1 100%;
+    width: 100%;
+    border-bottom: 1px solid #efeff1;
+    @include mq("tablet", "max"){
+    	margin-bottom: 6px;
+    }
+}
+
+@include mq("tablet", "max"){
+	.checkout-container .checkout-side .checkout-side-top--subtotal .subtotal-row:not(:last-child) {
+	    padding-bottom: 6px;
+	}
+	.checkout-container .checkout-side .checkout-side-top--subtotal .subtotal-row {
+	    padding-left: 10px;
+	    padding-right: 10px;
+	}
+	.checkout-container .checkout-side .checkout-side-top--subtotal {
+	    padding-top: 10px !important;
+	    padding-bottom: 10px !important;
+	}
+}
+
+@include mq("tablet", "min"){
+	.checkout-container .checkout-side .checkout-side-top--subtotal .subtotal-row:not(:last-child) {
+	    padding-bottom: 10px;
+	}
+	.checkout-container .checkout-side .checkout-side-top--subtotal .subtotal-row {
+	    padding-left: 20px;
+	    padding-right: 20px;
+	}
+	.checkout-container .checkout-side .checkout-side-top--subtotal .subtotal-separator {
+	    margin-bottom: 10px;
+	}
+}

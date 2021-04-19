@@ -1,0 +1,50 @@
+/*
+ * Flex UX Framework
+ *
+ * Filename: myaccount-shippingaddress.scss
+ * Type:     Partial Stylesheet
+ * 
+ * Copyright (C) 2019 Geiger, All Rights Reserved
+ */
+
+.address-cards-grid{
+	.btn--primary{
+		margin-top: 30px;
+	}
+
+	.address-card {
+		width: auto;
+	    min-height: 135px;
+
+	    .mdl-card__title {
+		    flex-wrap: wrap;
+		    max-width: 100%;
+		    width: 100%;
+		    padding: 15px;
+		}
+
+		.mdl-card__menu i{
+			font-size: 18px;
+		}
+
+		.address-line {
+		    font-size: 13px;
+		    line-height: 13px;
+		    box-sizing: border-box;
+		    flex: 1 1 100%;
+		    padding-bottom: 5px;
+		}
+
+		.shipping-title {
+		    font-weight: 700;
+		    font-size: 15px;
+		    line-height: 16px;
+		    max-width: 75%;
+		    overflow: hidden;
+		    text-overflow: ellipsis;
+		    white-space: nowrap;
+		    padding-bottom: 10px;
+		}
+
+	}
+}

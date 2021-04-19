@@ -1,0 +1,76 @@
+/*
+ * Flex UX Framework
+ *
+ * Filename: home-about-us-v1.scss
+ * Type:     Partial Stylesheet
+ *
+ * Copyright (C) 2019 Geiger, All Rights Reserved
+ */
+ // @TODO: push margin to parent
+ // @TODO: Use global variables for font-family (see _configs.scss)
+.about-us {
+	background: white;
+	// border-radius: 5px;
+	// padding: 18px 30px 12px;
+	max-width: none;
+	text-align: center;
+	line-height: 21px;
+	font-family: $standard-font-face;
+	background: #fff;
+	// margin: 12px 12px 32px 12px;
+
+	@include mq("phone-wide", "max"){
+	    // padding: 4.3px;
+	    // margin: 6px;
+	}
+	
+	p { 
+		margin-bottom: 0; 
+
+		@include mq("phone-wide", "max"){
+	    	line-height: 1.5;
+	    	width: 265px;
+	    	margin: auto;
+		}
+	}
+
+	h1 {
+		// color: $h1-font-color; 
+	}
+
+	.copy {
+		margin: auto;
+		max-width: 626px;    
+		padding-bottom: 30px; 
+
+		@include mq("phone-wide", "max"){
+	    	// margin: 4.3px;
+		}
+	}
+
+	.title {
+		// padding-top: 10px;
+		// margin-top: -6px;
+		// padding-bottom: 0px;
+		letter-spacing: 0;
+		text-transform: none;
+		line-height: 1.15em; 
+		padding-top: 32px; 
+		padding-bottom: 15px; 
+
+		sup {
+			 position: relative;
+			font-size: 40%;
+			line-height: 0;
+			vertical-align: baseline;
+			top: -1.2em; 
+			right: 0.5em; 
+		}
+
+		// @include mq("phone-wide", "max") {
+		// 	padding-top: 3.7px;
+		// 	padding-bottom: 15.7px;
+		// 	margin-top: 0;
+		// }
+	}
+}

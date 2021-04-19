@@ -1,0 +1,45 @@
+/*
+ * Flex UX Framework
+ *
+ * Filename: myaccount-billingaddress.scss
+ * Type:     Partial Stylesheet
+ * 
+ * Copyright (C) 2019 Geiger, All Rights Reserved
+ */
+
+.my-account{
+    .mdl-textfield {
+
+    	&__label {
+    		text-align: center;
+    	}
+
+     	&.is-dirty {
+        	color: #333 !important;
+
+        	.mdl-textfield__label {
+        		color: $brand-color !important;
+        		text-align: center;
+
+        		&::after {
+        			background-color: $brand-color !important;
+        			bottom: 20px;
+        			content: '';
+        			height: 2px;
+        			left: 45%;
+        			position: absolute;
+        			transition-duration: .2s;
+        			transition-timing-function: cubic-bezier(.4,0,.2,1);
+        			visibility: hidden;
+        			width: 10px;
+        		}
+        	}
+        }
+    }
+
+
+    .mdl-textfield__input {
+        padding-left: 3px;
+        // line-height: 1px;
+    } 
+}

@@ -1,0 +1,429 @@
+/*
+ * Flex UX Framework
+ *
+ * Filename: basket.scss
+ * Type:     Template Stylesheet
+ * 
+ * Copyright (C) 2019 Geiger, All Rights Reserved
+ */
+
+.checkout {
+
+    h1 {
+        margin-top: 0;
+    }
+
+    main {
+        background: #fff;
+    } 
+
+    .page-body {
+        max-width: 1175px;
+        margin: 9px auto auto;
+        padding: 12px;
+        // background: #e5e5e5;
+
+        @include mq("phone-wide", "max"){
+            padding: 5px!important;
+            padding-bottom: 50px!important;
+        }
+    }
+
+    .page-header {
+        height: 0;
+    }
+}
+
+.checkout-basket {
+
+
+   .warning {
+        color: #E60000;
+        font-size: 14px;
+        line-height: 1.5em;
+        margin: 10px;
+        padding: 10px 0px;
+        text-align: center;      
+   }
+
+
+
+
+   .checkout-container {
+       display: flex;
+       flex-wrap: wrap;
+
+       font-family: $standard-font-face !important; 
+
+       @include mq('tablet', 'max') {
+            margin: 10px;
+       }
+
+       @include mq('tablet', 'min') {
+            margin: 20px;
+       }
+
+       .checkout-main {
+            @include mq('tablet', 'max') {
+                flex: 1 1 100%;
+            }
+
+            @include mq('tablet', 'min') {
+                flex: 75 1;
+                margin-right: 20px;
+            }
+
+            display: flex;
+            flex-flow: column;
+
+            .checkout-main-top {
+                margin-bottom: 20px;
+                background: white; 
+
+                .checkout-item {
+                    display: flex;
+                    white-space: nowrap;
+                    border-bottom: 1px solid #efeff1;
+
+                    .checkout-item-main {
+                        display: flex;
+                        align-items: center;
+                        flex: 8 8 80%;
+                        font-size: 12px;
+                        white-space: normal;  
+
+                        @include mq('phone-wide', 'min') {
+                            padding: 25px 20px 25px 25px;
+                        }
+
+                        .checkout-item-caption {
+                            display: flex;
+                            align-self: flex-start;
+                            flex-direction: column;
+                            line-height: 1.15;
+                            width: 100%; // ALL FSB 
+
+                             p {
+                                color: #E60000; 
+                                margin-bottom: 4px; 
+                                  @include mq("phone", "max") {
+                                       width: 120px; 
+                                       line-height: 1.25em; 
+                                        
+                                  }
+                            } 
+ 
+                            .artwork {
+                                    p {
+                                        font-size: 13px;
+                                         margin-bottom: 8px;
+                                         color: $primary-font-color; 
+                                         font-weight: 700; 
+                                    }
+
+                                    img {
+                                        max-width: 125px;
+                                        padding: 0px !important; 
+
+                                        @include mq("tablet", "max") {
+                                            max-width: 100px;  
+                                        }
+                                    }
+                            }
+                            
+
+                            &--code {
+                                margin-bottom: 10px; 
+                            }
+
+                            @include mq("phone-wide", "max") {
+                                p.delivery-overorder-message{
+                                    white-space: normal;
+                                }
+                            }
+
+                            @include mq('tablet', 'max') {
+                                max-width: 60%;
+                            }
+
+                            &--title {
+                               font-weight: 700;
+                               margin-bottom: 3px;
+
+                               @include mq('tablet', 'max') {
+                                    word-wrap: normal;
+                                    white-space: pre-line;
+                               }
+                            }
+
+                            &--code {
+                                @include mq('tablet', 'max') {
+                                    word-wrap: normal;
+                                    white-space: pre-line;
+                                }
+                            }
+                        }
+
+                        .delivery-options {
+                            display: flex;
+                            flex-flow: row;
+                            flex-wrap: wrap;
+                            white-space: normal;
+                            margin-top: 0; 
+                            padding-left: 0; 
+
+                           
+
+                            .mdl-radio {
+                                font-size: 12px !important; 
+                                line-height: 1.5em; 
+
+                                &__outer-circle {
+                                    top: 1px;
+                                }
+                                &__inner-circle {
+                                    top: 5px; 
+                                }
+                               } 
+
+                            li {
+                                flex: 1 1 100%;
+                                word-wrap: break-word;
+                                height: auto;
+                            }
+                        }
+
+                        a {
+                            text-align: center;
+                            height: 100%;
+                            margin-right: 5px;
+                        }
+
+                        img { 
+
+                            padding-right: 10px;
+                            // ALL FSB 
+
+                           
+                         
+                            @include mq('tablet', 'max') {
+                                max-width: 75px;
+                                max-height: 75px;
+                                padding: 10px;   
+                            }
+
+                            @include mq('tablet', 'min') {
+                                max-width: 100px;
+                                max-height: 100px;
+                               
+                            }
+                        }
+                    }
+
+
+
+                    .checkout-item-controls {
+                        flex-grow: 2;
+                        text-align: right;
+                        box-sizing: border-box;
+
+                        @include mq('tablet', 'max') {
+                            padding: 10px;
+                        }
+
+                    }
+
+                    &--control {
+                        padding-top: 3px;
+                        padding-bottom: 3px;
+                        width: 100%;
+                        margin-bottom: 10px;
+
+                        .mdl-textfield {
+                            padding: 0;
+                        }
+
+                        &__remove {
+                            margin-top: 10px;
+                            span {
+                                text-decoration: none;
+                                text-transform: uppercase;
+                                font-weight: bold;
+                            }
+                        }
+                    }
+
+                    &--quantity {
+                        max-width: 35px;
+                    }
+
+                    &--update-quantity {
+                        cursor: pointer;
+                        text-decoration: underline;
+                        color: $brand-color;
+                    }
+
+                    &--remove {
+                        cursor: pointer;
+                    }
+
+                } // checkout-item
+            }
+       } // .checkout-main
+       .checkout-side {
+            @include mq('tablet', 'max') {
+                flex: 1 1 100%;
+            }
+
+             @include mq('tablet', 'min') {
+                flex: 25 1;
+             }  
+
+            .checkout-side-top {
+                flex-flow: column;
+                padding: 0;
+                background: white; 
+
+                 @include mq('tablet', 'max') {
+                    min-height: 141px;
+                 }
+
+                 .checkout-basket-subtotals {
+                    flex-flow: row;
+                    border-bottom: 1px solid #efeff1;
+                    display: flex;
+                    flex: 1 1 100%;
+                    font-size: 18px;
+                       @include mq('tablet', 'max') {
+                            max-height: 18px;
+                            padding: 10px;
+                       }
+
+                       @include mq('tablet', 'min') {
+                            padding: 20px;
+                       }
+                       .checkout-subtotals {
+                           &--subtotal-label {
+                               flex: 0 4 40%;
+                           }
+                           &--subtotal {
+                               font-weight: bold;
+                               flex: 0 6 60%;
+                               text-align: right;
+                           }
+                       }
+                 }
+            }
+        }
+
+   } // .checkout-container
+
+} // .checkout-basket
+
+.checkout-basket-buttons {
+    text-align: center;
+    flex: 1 1 100%;
+    font-size: 18px;
+
+
+     @include mq('tablet', 'max') { 
+        padding: 10px; 
+        flex-direction: column;
+
+         display: flex; 
+        justify-content: center;
+        align-items: center; 
+
+        .btn--primary {
+            min-width: 200px; 
+        }
+     }
+     @include mq('tablet', 'min') { 
+        padding: 20px;
+     }
+
+     button {
+        @include mq('tablet', 'min') { 
+            width: 250px;
+        }
+     }
+
+     .btn-main {  
+        font-family: $standard-font-face;
+//         font-size: 10px;
+//         font-weight: bold;
+//         font-size: 14px;
+//         border-radius: 0;
+//         // letter-spacing: 2px;
+//         padding: 0 24px; 
+
+         @include mq('tablet', 'max') { 
+            min-height: 36px;
+         }
+     }
+
+     .btn--primary {
+        font-size: 16px;
+        font-family: $standard-font-face;
+      //  color: #FFF;  
+        padding: 0px 15px;
+        transition: background 0.15s; 
+        height: 45px;
+        // letter-spacing: 1px;
+        font-weight: 700;
+        
+
+        @include mq("phone-wide", "max") {
+            width: 100%;
+        }
+     }
+
+     .btn--secondary {
+        @include mq("phone-wide", "max") {
+            width: 100%;
+        }
+        
+     }
+
+     .btn--light {
+        font-size: 16px;
+        font-family: $standard-font-face;
+        padding: 0px 15px;
+        transition: background 0.15s;
+        border: 1px solid #F2F2F2;
+        background-color: #FFF;
+        height: 45px;
+     }
+
+     .checkout-basket-taxwarning {
+        display: inline-block;
+        margin-top: 10px;
+        margin-bottom: 20px;
+
+         @include mq('tablet', 'max') { 
+            margin-bottom: 10px;
+            margin-left: 10px;
+            margin-right: 10px;
+         }
+
+         @include mq('tablet', 'min') { 
+            margin-left: 20px;
+            margin-right: 20px;
+            margin-bottom: 20px;
+            width: 145px; 
+         }
+     }
+
+     .checkout-small-text {
+        font-size: 13px; 
+        padding-bottom: 3px; 
+        padding-top: 3px;
+        line-height: 1.25em; 
+
+        @include mq("phone-wide", "max") {
+            width: 145px;  
+        }
+
+    }
+}    
+

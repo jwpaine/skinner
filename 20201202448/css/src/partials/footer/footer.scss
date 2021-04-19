@@ -1,0 +1,171 @@
+/*
+ * Flex UX Framework
+ *
+ * Filename: footer.scss
+ * Type:     Partial Stylesheet
+ * 
+ * Copyright (C) 2019 Geiger, All Rights Reserved
+ */
+
+
+.footer {
+	display: flex;
+	flex-flow: row nowrap;	
+	align-items: center;
+	justify-content: space-between;
+	padding: 20px;
+	background: $footer-background;
+	color: $footer-link-color;  
+	font-family: $standard-font-face;
+	font-weight: 700; 
+	font-size: 14px; 
+	height: 25px;
+	min-height: 25px;
+	border-top: 1px solid #AAA39F; 
+//     max-height: 105px; 
+
+    @include mq("tablet", "min") {
+      //  height: 65px;    
+        max-height: 65px;  
+    }
+    
+	@include mq("tablet", "max") {
+		padding: 0;
+		height: auto;
+		min-height: auto;
+	}
+
+	@include mq("phone-wide", "max") { 
+
+      display: block;    
+    
+	} 
+	
+	img {
+		height: 44px;
+		margin-right: 20px;
+		display: none;
+
+		@include mq("tablet", "max") {
+		    height: 25px;
+		    margin-bottom: 20px;
+		    margin-right: 0px;
+		}
+
+	}
+
+	a {
+		color: $footer-link-color;
+    	text-decoration: none; 
+    	font-weight: 700; 
+    	font-size: 14px;  
+ 
+    	&:hover {
+    		color:    $footer-link-color-hover;
+    		text-decoration: none; 
+    	}
+	}
+
+	#call-link {
+		display: none;
+	}
+
+	> div {
+		display: flex;
+		align-items: center;
+        
+        @include mq("tablet", "min") {
+            height: 65px; 
+        }
+
+
+		@include mq("tablet", "max") {
+		    flex-direction: column;
+		    justify-content: center;
+		    height: 85px;
+		    line-height: 1.5em;
+		}
+		@include mq("phone-wide", "max") {
+    		// height: 30px;
+    		padding-top: 25px; 
+    		height: auto;  
+    		padding-left: 2vw;
+    		padding-right: 2vw;
+		}
+
+	}
+
+	@include mq("tablet", "max") {
+		min-height: 105px;
+		flex-flow: column nowrap;
+		text-align: center;
+		padding: 30px;
+		padding-bottom: 45px;
+
+		@include mq("phone-wide", "max"){
+			height: auto;
+			min-height: auto;
+			padding: 0;
+		}
+
+		#call-link {
+			display: inline-flex;
+			// padding-bottom: 24px;
+
+			@include mq("phone-wide", "max"){
+				// padding-bottom: 10px;
+				padding-top: 30px;
+			}
+
+			& a {
+				font-size: 20px;
+
+				@include mq("phone-wide", "max") {
+					font-size: 18px;
+				}
+			}
+		}
+
+		#call-link a {
+			display: inline-flex;
+			text-decoration: none;
+
+			@include mq("phone-wide", "min") {
+				margin-bottom: 15px;
+			}
+		}
+
+		#call-link a::before {
+			content: '\e0cd';
+			height: 25px;
+			width: 25px;
+			font-family: "Material Icons";
+			font-size: 24px;
+			color: #c4c4c4;
+			padding-right: 5px;
+		}
+
+		.footer-nav-menu {
+			padding-top: 0;
+			line-height: 2.5em;
+
+
+			 @include mq("tablet", "min") {	
+			 	height: 66px;
+				margin: 0;
+				display: flex;
+				align-items: center;
+			 } 
+
+
+
+
+			@include mq("phone-wide", "max") {
+				padding-bottom: 45px;
+				margin: 0;
+			}
+		}
+
+	}
+}
+

@@ -1,0 +1,58 @@
+/*
+ * Flex UX Framework
+ *
+ * Filename: nav_menu.scss
+ * Type:     Component Stylesheet
+ * 
+ * Copyright (C) 2019 Geiger, All Rights Reserved
+ */
+
+// footer 
+
+.footer-nav-menu {
+	@include mq("tablet", "min") {
+            height: 65px; 
+            display: flex;
+            justify-content: center;
+            align-items: center; 
+            margin: 0; 
+		}
+		 
+	li {
+		display: inline-block;
+		list-style-type: none;
+		font-size: 13px;
+		padding-left: 13px;
+		padding-right: 13px;
+		cursor: pointer;
+		font-weight: 700;
+
+
+		@include mq("tablet", "min") {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 100%; 
+
+			&:hover {
+				background: #939798; 
+
+				> a {
+					text-decoration: underline; 
+				}
+			}
+		}   
+
+
+		
+
+		
+
+
+	}
+
+	@include mq("tablet", "max") {
+	    padding: 0;
+	    padding-top: 25px;
+	}
+}

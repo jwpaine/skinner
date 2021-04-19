@@ -1,0 +1,51 @@
+/*
+ * Flex UX Framework
+ *
+ * Filename: sub_category_list.scss
+ * Type:     Component Stylesheet
+ * 
+ * Copyright (C) 2019 Geiger, All Rights Reserved
+ */
+
+
+
+
+    .desktop-nav > ul > li[data-subnav] {
+
+        .sub-nav {
+
+            background: #fff;
+            box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14),0 3px 1px -2px rgba(0,0,0,0.2),0 1px 5px 0 rgba(0,0,0,0.12);
+            transition: opacity 1s;
+           
+            .sub-nav-item {
+                position: relative;
+            }
+            
+        }
+
+        [data-subnav] {
+            .sub-nav, .subSubNavContainer {
+                display: none;
+                position: absolute;
+                top: 0;
+                left: 99.5%;
+            }
+            &:hover {
+                > .subSubNavContainer {
+                    display: block!important;
+                }
+            }
+        }
+
+        &:hover {
+            .sub-nav {
+                display: block !important;
+                opacity: 1!important;
+            }
+        }
+
+    }
+    
+
+

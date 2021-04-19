@@ -1,0 +1,18 @@
+
+.mdl-collapse--opened {
+    margin-top: -1px;
+}
+
+.mdl-collapse__content-wrapper {
+    overflow: hidden;
+}
+
+.mdl-collapse__content {
+    transition-property: margin-top;
+    transition-duration: 0.2s;
+}
+
+.mdl-collapse--opened.mdl-collapse__content-wrapper > .mdl-collapse__content,
+.mdl-collapse--opened > .mdl-collapse__content-wrapper > .mdl-collapse__content {
+    margin-top: 0 !important;
+}

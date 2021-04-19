@@ -1,0 +1,25 @@
+/*
+ * Flex UX Framework
+ *
+ * Filename: checkout-addresses-multi-dropdown.scss
+ * Type:     Partial Stylesheet
+ * 
+ * Copyright (C) 2019 Geiger, All Rights Reserved
+ */
+
+.checkout-split-row {
+	.checkout-split-cell{
+		&__dropdown {
+			@include mq("tablet", "max"){
+		    	margin-left: 22px;
+			}
+		}
+	}
+
+	.edit-address-button {
+		@include mq("tablet", "max"){
+		    margin-left: 10px;
+		    margin-top: 12px;
+		}
+	}
+}

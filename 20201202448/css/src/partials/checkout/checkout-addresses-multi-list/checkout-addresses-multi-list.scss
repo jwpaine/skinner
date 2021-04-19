@@ -1,0 +1,107 @@
+/*
+ * Flex UX Framework
+ *
+ * Filename: checkout-addresses-multi-list.scss
+ * Type:     Partial Stylesheet
+ * 
+ * Copyright (C) 2019 Geiger, All Rights Reserved
+ */
+
+.checkout-split-row {
+	display: flex;
+	flex-wrap: wrap;
+
+	@include mq("tablet", "min"){
+	    padding: 20px;
+	}
+
+	@include mq("tablet", "max"){
+	    padding: 10px;
+	}
+
+	.checkout-split-title {
+	    font-weight: 700;
+	}	
+
+	.checkout-split-cell {
+	    display: flex;
+	    font-size: 14px;
+	    line-height: 16px;
+	    letter-spacing: 0;
+	    justify-content: flex-end;
+    	flex: 1 1 100%;
+
+	    &--name {
+		    flex: 3 3;
+		    flex-flow: column;
+		    margin-left: 22px;
+		}
+
+		&--quantity {
+		    display: flex;
+		    flex: 2 2;
+		    justify-content: center;
+
+		    @include mq("tablet", "max"){
+			    flex-basis: 100%;
+			    margin-top: 20px;
+			}
+		}
+
+		&--address {
+		    justify-content: flex-end;
+
+		    @include mq("tablet", "min"){
+			    flex: 4 4;
+			}
+
+			@include mq("tablet", "max"){
+				display: flex;
+			    flex: 4 4;
+			    flex-basis: 100%;
+			    width: 100%;
+			    margin-top: 10px;
+			}
+		}
+
+		&--quantity {
+			.checkout-split-quantity-button {
+			    padding-left: 10px;
+			    cursor: pointer;
+			    text-decoration: underline;
+			}
+		}
+		
+		&__dropdown {
+		    font-size: 12px;
+
+		    @include mq("tablet", "min"){
+				margin:0;
+			}
+		}
+	}
+
+	.edit-address-button {
+	    margin-right: 0;
+	    margin-bottom: 0;
+
+	    @include mq("tablet", "min"){
+		    margin-left: 20px;
+		    margin-top: 2px;
+		}
+	}
+}
+
+.checkout-split-row:not(:last-child) {
+	border-bottom: 1px solid #efeff1;
+}
+
+.select-option-btn:after {
+    font-family: 'Material Icons';
+    content: '\e5cb';
+    display: inline-block;
+    transform: rotate(-90deg);
+    font-size: 22px;
+    color: $brand-color;
+    position: relative;
+}
