@@ -11,9 +11,11 @@ tinySkinner will initialize a local directory to match a remote directory contai
 tinySkinner is built with nodejs, and relies on rsync.
 
 ## Dependencies
-On Linux: Install nodejs, npm, rsync. (apt install nodejs npm rsync)
-On MacOS: Download and install nodejs: [here](https://nodejs.org/en/download/)
-On Windows: Enable Windows Subsystem for Linux (Control Panel -> Programs and Features -> Turn Windows Feature on or off -> Check Windows Subsystem for Linux). Then, snag a linux distro from Microsoft's app store (search debian, or ubuntu). If installing natively on Windows, you'll need to use Cygwin to support rsync, after you install nodejs.
+* On Linux: Install nodejs, npm, rsync. (apt install nodejs npm rsync)
+
+* On MacOS: Download and install nodejs: [here](https://nodejs.org/en/download/)
+
+* On Windows: Enable Windows Subsystem for Linux ```(Control Panel -> Programs and Features -> Turn Windows Feature on or off -> Check Windows Subsystem for Linux)```. Then, snag a linux distro from Microsoft's app store (search debian, or ubuntu). If installing natively on Windows, you'll need to use Cygwin to support rsync, after you install nodejs.
 
 ## setup 
 Snag a copy of the source using git
