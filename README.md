@@ -38,6 +38,8 @@ Open skinner.js and fill in the username, location of your privateKey, and modif
 
 In a terminal, type ```skinner init``` to setup a new working directory. Fill in values or accept defaults by pressing enter. a .config file will be written to the location of the working directory, and remote files will be synced down.
 
+![init.png](init.png)
+
 ## start skinning!
 
 In a terminal, enter in a working directory (cd 123456789/) and type ```skinner```. TinySkinner will compare local changes to remote, and sync down any partial file changes, and then begin monitoring for local file changes. When a change is detected, stylesheets will be compiled, and changes will be synced up. Quit anytime and return to your working directory, and begin where you left off! Change the name of any working directory for easier reference if needed.
