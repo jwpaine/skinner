@@ -14,7 +14,7 @@ let defaultConfig = {
 	"host" : "ggc8admin3.avetti.ca",
 	"port" : 5511,
 	"base_dir" : "/avetti/httpd/htdocs/content/preview/store/",
-	"shop" : "20201202448",
+	"shop" : "",
 	"working_dir" : "/assets/themes/blaze_en/"
 }
 
@@ -133,6 +133,10 @@ generateConfig.init = function(defaultConfig, callback) {
 		}
 		_interface.question(prompt, (value) => {
 			if (value == "") {
+				if (defaultConfig[keys[i]] == "") {
+					generateConfig.getUserInput()	
+					return
+				}
 				config[keys[i]] = defaultConfig[keys[i]] 
 			} else {
 				config[keys[i]] = value
