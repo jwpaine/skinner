@@ -18,7 +18,7 @@ On Windows: Enable Windows Subsystem for Linux (Control Panel -> Programs and Fe
 ## setup 
 Snag a copy of the source using git
 ```git clone https://github.com/jwpaine/skinner.git ```
-Or download a zip [here]https://github.com/jwpaine/skinner/archive/refs/heads/master.zip)
+Or download a zip [here](https://github.com/jwpaine/skinner/archive/refs/heads/master.zip)
 
 Navigate to the directory in a terminal, and type 'npm install'
 
