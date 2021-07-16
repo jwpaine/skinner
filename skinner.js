@@ -5,7 +5,7 @@ const fs = require('fs')
 const Rsync = require('rsync');
 const chokidar = require('chokidar');
 const sass = require('node-sass');
-
+const os = require('os')
 
 let privKey = ''
 let username = ''
@@ -176,57 +176,110 @@ let compile = function(scss_file, css_file, callback) {
 	  });
 } 
 
-// initalize shop locally, and pull remote files
-if (process.argv[2] == 'init') {
-	new Shop(null, null).init((error, shop) => {
-		if (error) throw error
-		shop.pull(function(err) {
-			if (err) {
-				console.log(err)
-				return
-			}
-			console.log('done!')
-		});
+// check for skinner setup config
+let getSkinnerRc = function(callback) {
+
+	fs.readFile(`${os.homedir()}/.skinnerrc`, (err, data) => {
+	
+		if (err) {
 		
-	})
-} else {
-	let working_dir = process.cwd()
-	fs.readFile(`${working_dir}/.config`, (err, data) => {
-	    if (err) throw err;
-	    let config = JSON.parse(data)
-		let s = new Shop(working_dir, config)
-		// sync remote -> local
-		s.pull(function(err) {
-			if (err) {
-				console.log(err)
-				return
-			}
-			console.log('done!')
-			// watch working directory /css/src for file changes
-			s.watch(function(modifiedFile) {
-				console.log(`modified: ${modifiedFile}`)
-				// compile scss -> css
-				compile(`${working_dir}/css/src/v1.scss`, `${working_dir}/css/v1.css`, function(err) {
-					if (err) {
-						console.log(err)
-						console.log('Please correct the above issue, and re-save')
-						return
-					}
-					console.log('compiled!') 
-					// push changes to remote
-					s.push(function(err) {
-						if (err) {
-							console.log(err)
+			if(err.code == "ENOENT") {
+				console.log('Skinner requires setup...')
+				let defaultSkinnerConfig = {
+					"privKey" : "",
+					"username" : ""
+				}
+				generateConfig.init(defaultSkinnerConfig, (config) => {
+					console.log(`--> ${JSON.stringify(config)}`)
+					fs.writeFile(`${os.homedir()}/.skinnerrc`, JSON.stringify(config), (error) => {
+						if(error) {
+							callback(error, null)
 							return
 						}
-						console.log('done!')
-					})
-					// sync local -> remote
+						console.log('skinner config written')
+						callback(null, config)
+					}) 
 				})
-			}); 
-		})
+				return
+			}
+
+			callback(err, null)
+			return
+		}
+	
+		callback(null, JSON.parse(data))
 	})
 }
+
+
+
+
+getSkinnerRc(function(err, data) {
+	if (err) {
+		console.log(err)
+		return
+	}
+	let config = data
+	console.log(`loaded config: ${JSON.stringify(data)}`)
+
+	privKey = config.privKey
+	username = config.username
+
+	// initalize shop locally, and pull remote files
+	if (process.argv[2] == 'init') {
+		new Shop(null, null).init((error, shop) => {
+			if (error) throw error
+			shop.pull(function(err) {
+				if (err) {
+					console.log(err)
+					return
+				}
+				console.log('done!')
+			});
+			
+		})
+	} else {
+		let working_dir = process.cwd()
+		fs.readFile(`${working_dir}/.config`, (err, data) => {
+			if (err) throw err;
+			let config = JSON.parse(data)
+			let s = new Shop(working_dir, config)
+			// sync remote -> local
+			s.pull(function(err) {
+				if (err) {
+					console.log(err)
+					return
+				}
+				console.log('done!')
+				// watch working directory /css/src for file changes
+				s.watch(function(modifiedFile) {
+					console.log(`modified: ${modifiedFile}`)
+					// compile scss -> css
+					compile(`${working_dir}/css/src/v1.scss`, `${working_dir}/css/v1.css`, function(err) {
+						if (err) {
+							console.log(err)
+							console.log('Please correct the above issue, and re-save')
+							return
+						}
+						console.log('compiled!') 
+						// push changes to remote
+						s.push(function(err) {
+							if (err) {
+								console.log(err)
+								return
+							}
+							console.log('done!')
+						})
+						// sync local -> remote
+					})
+				}); 
+			})
+		})
+	}
+})
+
+
+
 
 
 
