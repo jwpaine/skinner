@@ -28,11 +28,11 @@ Make the skinner.js file executable:
 
 ``` chmod +x skinner.js ```
 Add skinner.js to your $PATH (In Linux/MacOS, I created a symlink from my install location, to a spot on my filesystem)
-``` sudo ln -s /home/Tsunami/skinner/skinner.js /usr/local/bin/skinner ```
+``` sudo ln -s /home/John/skinner/skinner.js /usr/local/bin/skinner ```
 
 ### configuration
 
-Open skinner.js and fill in the username, location of your privateKey, and modify the defaultConfig if required.
+The first time you call skinner init, in a terminal, you should be prompted for your SSH username and private key location. These will be saved to a .skinnerrc file, within your home directory.
 
 ## Usage
 

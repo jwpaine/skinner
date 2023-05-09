@@ -4,11 +4,12 @@ const readline = require("readline");
 const fs = require('fs')
 const Rsync = require('rsync');
 const chokidar = require('chokidar');
-const sass = require('node-sass');
+const sass = require('sass');
 const os = require('os')
 
-let privKey = ''
+/* let privKey = ''
 let username = ''
+*/
 
 let defaultConfig = {
 	"host" : "ggc8admin3.avetti.ca",
